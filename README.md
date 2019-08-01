@@ -1,36 +1,20 @@
 # PHP Nats Streaming Server Client
 
-## Build
-
-| Master  | Develop |
-| ------------- | ------------- |
-| [![Build Status](https://travis-ci.org/byrnedo/php-nats-streaming.svg?branch=master)](https://travis-ci.org/byrnedo/php-nats-streaming)  | [![Build Status](https://travis-ci.org/byrnedo/php-nats-streaming.svg?branch=develop)](https://travis-ci.org/byrnedo/php-nats-streaming)  |
-
-## Coverage
-
-| Master  | Develop |
-| ------------- | ------------- |
-| [![Coverage Status](https://coveralls.io/repos/github/byrnedo/php-nats-streaming/badge.svg?branch=master)](https://coveralls.io/github/byrnedo/php-nats-streaming?branch=master)  | [![Coverage Status](https://coveralls.io/repos/github/byrnedo/php-nats-streaming/badge.svg?branch=develop)](https://coveralls.io/github/byrnedo/php-nats-streaming?branch=develop)  |
-
-
-
 ## Intro
 
 A php client for [Nats Streaming Server](https://nats.io/documentation/streaming/nats-streaming-intro/).
 
-
 Uses [phpnats](https://github.com/repejota/phpnats) under the hood and closesly resembles it's api.
-
 
 ## Requirements
 
 * php 5.6+
 * [stan](https://github.com/nats-io/nats-streaming-server)
 
-
 ## Installation
 
 Get [composer](https://getcomposer.org/):
+
 ```bash
 curl -O http://getcomposer.org/composer.phar && chmod +x composer.phar
 ```
@@ -38,12 +22,13 @@ curl -O http://getcomposer.org/composer.phar && chmod +x composer.phar
 Add php-nats-streaming as a dependency to your project
 
 ```bash
-php composer.phar require 'byrnedo/php-nats-streaming:^0.2.4'
+php composer.phar require 'rmh-media/php-nats-streaming:^0.3.0'
 ```
 
 ## Usage
 
 ### Publish
+
 ```php
 $options = new \NatsStreaming\ConnectionOptions();
 $options->setClientID("test");
@@ -93,6 +78,7 @@ foreach ($rs as $r){
 ```
 
 ### Subscribe
+
 ```php
 $options = new \NatsStreaming\ConnectionOptions();
 $c = new \NatsStreaming\Connection($options);
@@ -135,6 +121,7 @@ $c->wait();
 ```
 
 ### Queue Group Subscribe
+
 ```php
 $options = new \NatsStreaming\ConnectionOptions();
 $c = new \NatsStreaming\Connection($options);
@@ -157,6 +144,7 @@ $c->close();
 ```
 
 ### Manual Ack
+
 ```php
 
 $options = new \NatsStreaming\ConnectionOptions();
@@ -180,4 +168,3 @@ $c->close();
 ## License
 
 MIT, see [LICENSE](LICENSE)
-
